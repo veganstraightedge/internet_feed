@@ -5,10 +5,10 @@ module InternetFeed
   class << self
     attr_reader :url
 
-    def from(url:)
+    def from url:
       return nil if url.nil?
 
-      InternetFeed::Feed.new
+      InternetFeed::Feed.new url: url
     end
   end
 end

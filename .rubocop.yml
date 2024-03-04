@@ -19,3 +19,6 @@ Style/FrozenStringLiteralComment:
 
 Style/Documentation:
   Enabled: false
+
+Style/MethodDefParentheses:
+  EnforcedStyle: require_no_parentheses
