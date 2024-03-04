@@ -1,4 +1,6 @@
 RSpec.describe InternetFeed::Webpage do
+  subject(:webpage) { described_class.new at: location }
+
   describe '.new' do
     context 'when `at:` is nil' do
       it 'returns an ArgumentError' do
@@ -8,8 +10,6 @@ RSpec.describe InternetFeed::Webpage do
   end
 
   describe '#remote?' do
-    subject(:webpage) { described_class.new at: location }
-
     context 'when at an HTTP URL' do
       let(:location) { 'examples/one_atom_feed.html' }
 
@@ -36,8 +36,6 @@ RSpec.describe InternetFeed::Webpage do
   end
 
   describe '#local?' do
-    subject(:webpage) { described_class.new at: location }
-
     context 'when at an HTTP URL' do
       let(:location) { 'http://example.com/feed' }
 
@@ -59,6 +57,24 @@ RSpec.describe InternetFeed::Webpage do
 
       it 'is true' do
         expect(webpage.local?).to be true
+      end
+    end
+  end
+
+  describe '#feed_links' do
+    context 'when there is one feed link tag' do
+      let(:location) { '../../spec/examples/one_atom_feed.html' }
+
+      it 'finds link tags with rel=alternate in HTML' do
+        expect(webpage.feed_links).to eq ['/feed']
+      end
+    end
+
+    context 'when there are multiple feed link tag' do
+      let(:location) { '../../spec/examples/one_atom_one_json_feed.html' }
+
+      it 'finds link tags with rel=alternate in HTML' do
+        expect(webpage.feed_links).to match_array %w[/feed.json /feed]
       end
     end
   end

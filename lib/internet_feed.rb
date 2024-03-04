@@ -1,3 +1,4 @@
+require 'nokogiri'
 require_relative 'internet_feed/version'
 require_relative 'internet_feed/feed'
 require_relative 'internet_feed/webpage'
