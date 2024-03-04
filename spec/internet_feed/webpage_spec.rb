@@ -1,6 +1,4 @@
 RSpec.describe InternetFeed::Webpage do
-  let(:file_path) { 'examples/one_atom_feed.html' }
-
   describe '.new' do
     context 'when `at:` is nil' do
       it 'returns an ArgumentError' do
