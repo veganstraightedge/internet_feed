@@ -15,7 +15,7 @@ RSpec.describe InternetFeed do
     context 'when url is a string' do
       let(:url) { 'https://example.com' }
 
-      it 'requires a url keyword argument' do
+      it 'returns an instance of InternetFeed::Feed' do
         expect(feed).to be_a InternetFeed::Feed
       end
     end
@@ -23,7 +23,7 @@ RSpec.describe InternetFeed do
     context 'when url is a nil' do
       let(:url) { nil }
 
-      it 'requires a url keyword argument' do
+      it 'returns nil' do
         expect(feed).to be_nil
       end
     end

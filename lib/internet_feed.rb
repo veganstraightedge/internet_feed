@@ -8,7 +8,7 @@ module InternetFeed
     def from url:
       return nil if url.nil?
 
-      InternetFeed::Feed.new url: url
+      InternetFeed::Feed.new url:
     end
   end
 end
