@@ -1,3 +1,4 @@
+require 'bundler/setup'
 require 'internet_feed'
 
 RSpec.configure do |config|

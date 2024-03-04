@@ -1,5 +1,7 @@
 ---
 
+inherit_from: .rubocop_todo.yml
+
 require:
   - rubocop-md
   - rubocop-performance
@@ -13,4 +15,7 @@ AllCops:
   NewCops: enable
 
 Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Documentation:
   Enabled: false
