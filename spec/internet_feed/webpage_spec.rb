@@ -7,14 +7,6 @@ RSpec.describe InternetFeed::Webpage do
         expect { described_class.new }.to raise_error ArgumentError
       end
     end
-
-    # context 'when `at:` is file path' do
-    #   subject(:webpage) { described_class.new at: file_path }
-    #
-    #   it 'loads an HTML file', skip: "temp" do
-    #     expect(webpage).to eq 17
-    #   end
-    # end
   end
 
   describe '#remote?' do
