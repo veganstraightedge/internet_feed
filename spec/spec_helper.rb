@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'internet_feed'
 
 RSpec.configure do |config|
